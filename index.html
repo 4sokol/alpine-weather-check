@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Information</title>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <p>Enter your location:</p>
+    <form id="location-form">
+        <input type="text" id="location-input" placeholder="Enter your location" />
+        <button type="button" onclick="getWeather()">Get Weather</button>
+    </form>
+    <iframe id="weather-frame" src="https://wttr.in" width="950" height="600"></iframe>
+
+    <script>
+        function getWeather() {
+            const location = document.getElementById('location-input').value;
+            const weatherFrame = document.getElementById('weather-frame');
+            weatherFrame.src = `https://wttr.in/${location}`;
+        }
+    </script>
+</body>
+</html>
