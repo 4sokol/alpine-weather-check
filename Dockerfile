@@ -7,11 +7,11 @@ FROM alpine
 
 LABEL maintainer="vladimir@sokolenko.org"
 
-RUN apk update
-RUN apk upgrade
-RUN apk add bash
-RUN apk add apache2
-RUN apk cache clean
+RUN apk update && \
+    apk upgrade && \
+    apk add bash && \
+    apk add apache2 && \
+    apk cache clean
 
 COPY index.html /var/www/localhost/htdocs/
 
